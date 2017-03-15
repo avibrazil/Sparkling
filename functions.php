@@ -449,3 +449,18 @@ function get_layout_class () {
 }
 
 endif;
+
+if ( defined( 'MULTISITE' ) ) :
+
+add_filter( 'upload_dir', 'kill_multisite_upload_extra_folders' );
+
+function kill_multisite_upload_extra_folders ( $upload ) {
+	$upload['basedir'] = get_option( 'upload_path' );
+	$upload['baseurl'] = get_option( 'upload_url_path' );
+	$upload['dir'] = $upload['basedir'] . $upload['subdir'];
+	$upload['url'] = $upload['baseurl'] . $upload['subdir'];
+
+	return $upload;
+}
+
+endif;
