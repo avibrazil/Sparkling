@@ -73,7 +73,7 @@ if (isset($_SERVER['HTTP_USER_AGENT']) && (strpos($_SERVER['HTTP_USER_AGENT'], '
 			<?php sparkling_call_for_action(); ?>
 		</div>
 
-		<div class="container main-content-area">
+		<div class="container-fluid main-content-area">
             <?php $layout_class = get_layout_class(); ?>
 			<div class="row <?php echo $layout_class; ?>">
 				<div class="main-content-inner <?php echo sparkling_main_content_bootstrap_classes(); ?>">
